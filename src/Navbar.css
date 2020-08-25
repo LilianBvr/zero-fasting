@@ -8,6 +8,12 @@
   transition: top 0.3s;
   overflow:hidden;
   height: 48px;
+  transition: all 0.4s ease;
+}
+
+.navbar.toggled{
+  height: 100vh;
+  transition: all 0.4s ;
 }
 
 .navbar-container{

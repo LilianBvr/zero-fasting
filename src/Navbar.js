@@ -28,7 +28,6 @@ class Navbar extends React.Component{
   handleCollapse(event){
     const {collapse_size} = this.props
 
-    this.navbar.current.style.height = '48px'
     this.setState({ toggled: false })
     document.body.style.overflow = 'auto'
 
@@ -46,7 +45,6 @@ class Navbar extends React.Component{
       })
     }
     
-
   }
 
   handleScroll(event){
@@ -71,12 +69,10 @@ class Navbar extends React.Component{
     const {toggled} = this.state
 
     if(toggled){
-      this.navbar.current.style.height = '48px'
       this.setState({ toggled: false })
       document.body.style.overflow = 'auto'
     }
     else{
-      this.navbar.current.style.height = '100vh'
       this.setState({ toggled: true })
       document.body.style.overflow = 'hidden'
     }
@@ -86,7 +82,7 @@ class Navbar extends React.Component{
     const {collapsed, toggled} = this.state
 
     return(
-      <div class='navbar' ref={this.navbar}>
+      <div class={`navbar ${toggled ? 'toggled' : ''}`} ref={this.navbar}>
         <div class='navbar-container'>
           <div class='navbar-brand'>
             <svg width="130" height="43" viewBox="0 0 130 43" fill="none" xmlns="http://www.w3.org/2000/svg">
