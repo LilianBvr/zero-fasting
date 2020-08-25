@@ -6,6 +6,8 @@
   background: #E86352;
 
   transition: top 0.3s;
+  overflow:hidden;
+  height: 48px;
 }
 
 .navbar-container{
@@ -23,6 +25,7 @@
 
 .navbar-menu{
   display: flex;
+  align-items: center;
 }
 
 .navbar-item{
@@ -52,7 +55,41 @@
 }
 
 .navbar-icon-menu{
-  padding-right: 0;
+  padding: 0 0 0 16px;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+.hamburger-item{
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  background: #fff;
+  border-radius: 8px;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+
+.hamburger-top{
+  top: 18%;
+}
+
+.navbar-icon-menu.close .hamburger-top{
+  transform: rotate(45deg);
+  top: 48%;
+}
+
+.hamburger-middle{
+  top: 48%;
+}
+
+.navbar-icon-menu.close .hamburger-middle, .navbar-icon-menu.close .hamburger-bottom{
+  transform: rotate(-45deg);
+  top: 48%;
+}
+
+.hamburger-bottom{
+  top: 78%;
 }
 
 .navbar-icon-menu:hover{
@@ -68,3 +105,19 @@
 .navbar-button:hover{
   border-color: hsla(0, 0%, 100%, 0.1);
 }
+
+.navbar-links-collapsed{
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 64px);
+  justify-content: space-around;
+}
+
+.navbar-links-collapsed > .navbar-link{
+  flex-grow: 1;
+  display:flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: center;
+}
+

@@ -23,7 +23,6 @@ class Navbar extends React.Component{
   componentDidMount(){
     window.addEventListener('resize', this.handleCollapse)
     window.addEventListener('scroll', this.handleScroll)
-    this.menuBtn.current.addEventListener('click', this.handleMenuClick)
   }
 
   handleCollapse(event){
@@ -33,6 +32,7 @@ class Navbar extends React.Component{
       collapsed: window.innerWidth < collapse_size,
       toggled: false
     })
+
   }
 
   handleScroll(event){
@@ -57,7 +57,7 @@ class Navbar extends React.Component{
     const {toggled} = this.state
 
     if(toggled){
-      this.navbar.current.style.height = 'auto'
+      this.navbar.current.style.height = '48px'
       this.setState({ toggled: false })
       document.body.style.overflow = 'auto'
     }
@@ -69,7 +69,7 @@ class Navbar extends React.Component{
   }
 
   render(){
-    const {collapsed} = this.state
+    const {collapsed, toggled} = this.state
 
     return(
       <div class='navbar' ref={this.navbar}>
@@ -90,8 +90,17 @@ class Navbar extends React.Component{
               (
                 <div div class='navbar-menu'>
                   <div class='navbar-button navbar-item'>Get Zero</div>
-                  <img src="https://assets-global.website-files.com/5e55b63d9f895949dd160ace/5e8cff28a3f963eb9d7c0fc3_icon-menu.svg" ref={this.menuBtn} alt="" class="navbar-icon-menu navbar-item" width="24" height="24"></img>
-                </div>
+                  <div
+                    class={`navbar-icon-menu navbar-item ${toggled ? 'close' : ''}`}
+                    onClick={this.handleMenuClick}
+                    ref={this.menuBtn}
+                  >
+                    <span class='hamburger-item hamburger-top'></span>
+                    <span class='hamburger-item hamburger-middle'></span>
+                    <span class='hamburger-item hamburger-bottom'></span>
+                    
+                  </div>
+                </div>   
               )
               :
               (
@@ -108,6 +117,16 @@ class Navbar extends React.Component{
             }
             
         </div>
+        {
+          (collapsed && toggled) && (
+            <div class='navbar-links navbar-links-collapsed'>
+              <div class='navbar-link navbar-item'>Zero Plus</div>
+              <div class='navbar-link navbar-item'>Why Fasting?</div>
+              <div class='navbar-link navbar-item'>Blog</div>
+              <div class='navbar-link navbar-item'>Shop</div>
+            </div>
+          )
+        }
       </div>
     )
   }
