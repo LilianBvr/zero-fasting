@@ -28,10 +28,24 @@ class Navbar extends React.Component{
   handleCollapse(event){
     const {collapse_size} = this.props
 
-    this.setState({
-      collapsed: window.innerWidth < collapse_size,
-      toggled: false
-    })
+    this.navbar.current.style.height = '48px'
+    this.setState({ toggled: false })
+    document.body.style.overflow = 'auto'
+
+    if(window.innerWidth < collapse_size)
+    {
+      this.setState({
+        collapsed: true,
+        toggled: false
+      })
+    }
+    else{
+      this.setState({
+        collapsed: false,
+        toggled: false
+      })
+    }
+    
 
   }
 
