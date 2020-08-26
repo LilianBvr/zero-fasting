@@ -82,7 +82,7 @@ class Navbar extends React.Component{
     const {collapsed, toggled} = this.state
 
     return(
-      <div class={`navbar ${toggled ? 'toggled' : ''}`} ref={this.navbar}>
+      <div class={`navbar ${toggled ? 'toggled' : ''} ${collapsed ? 'collapsed' : ''}`} ref={this.navbar}>
         <div class='navbar-container'>
           <div class='navbar-brand'>
             <svg width="130" height="43" viewBox="0 0 130 43" fill="none" xmlns="http://www.w3.org/2000/svg">

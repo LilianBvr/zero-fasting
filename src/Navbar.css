@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  background: #E86352;
+  background: transparent;
 
   transition: top 0.3s;
   overflow:hidden;
@@ -14,6 +14,10 @@
 .navbar.toggled{
   height: 100vh;
   transition: all 0.4s ;
+}
+
+.navbar.collapsed{
+  background: #E86352;
 }
 
 .navbar-container{
@@ -125,5 +129,6 @@
   align-items: center;
   width: 100vw;
   justify-content: center;
+  font-size: 25px;
 }
 
