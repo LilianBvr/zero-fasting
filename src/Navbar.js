@@ -48,10 +48,10 @@ class Navbar extends React.Component{
   }
 
   handleScroll(event){
-    const {prevScrollPos, collapsed} = this.state
+    const {prevScrollPos, collapsed, toggled} = this.state
     var currentScrollPos = window.pageYOffset
 
-    if(collapsed){
+    if(collapsed && !toggled){
       if (prevScrollPos > currentScrollPos) {
         this.navbar.current.style.top = "0";
       }

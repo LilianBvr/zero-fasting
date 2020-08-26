@@ -1,4 +1,14 @@
 .app{
-  min-height: 300vh;
+  background: #e86352;
+}
+.landing-page{
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(8%, #e86352), to(#f96));
+  background-image: linear-gradient(180deg, #e86352 8%, #f96);
+}
+
+.bloc-2{
   background: #ff9667;
+  height: 100vh;
+  border-top: 2px solid white;
 }
