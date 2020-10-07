@@ -10,7 +10,14 @@ class App extends React.Component {
     return (
       <div class="app">
         <Navbar collapse_size={768}></Navbar>
-        <div class='landing-page'></div>
+        <div class='landing-page'>
+          <div class='lp-content'>Fast forward to better health.</div>
+          <div class='lp-background'></div>
+          <div class='lp-clouds clouds-x-small'></div>
+          <div class='lp-clouds clouds-small'></div>
+          <div class='lp-clouds clouds-medium'></div>
+          <div class='lp-clouds clouds-large'></div>
+        </div>
         <div class='bloc-2'></div>
       </div>
     );

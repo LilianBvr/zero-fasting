@@ -2,13 +2,108 @@
   background: #e86352;
 }
 .landing-page{
-  height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(8%, #e86352), to(#f96));
+  height: calc(100vh - 48px);
+  position: relative;
+  width: 100vw;
+  overflow-x:hidden;
+}
+
+.lp-background{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(8%, #0077B6), to(#00B4D8));
   background-image: linear-gradient(180deg, #e86352 8%, #f96);
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100vw;
+  top:0%;
+  left: 0%;
+  transform: translateZ(0px);
+}
+
+.lp-content{
+  position: absolute;
+  top: 20%;
+  left: 4%;
+
+  z-index: 1;
+  background: transparent;
+
+  color: #fadeac;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  font-size: 64px;
+  line-height: 110%;
+  font-weight: 500;
+  font-family: Rubik, sans-serif;
+  max-width: 500px;
+  
+  transform: translateZ(3px) scale(1);
+}
+
+.clouds-x-small{
+  bottom: 600px;
+  background-image: url("https://assets-global.website-files.com/5e55b63d9f895949dd160ace/5eafa250b41a94e653c135b6_clouds-row-4.svg");
+  height: 153.6px;
+
+  animation: clouds-translation 130s;
+  -webkit-animation: clouds-translation 130s;
+}
+
+.clouds-small{
+  bottom: 300px;
+  background-image: url("https://assets-global.website-files.com/5e55b63d9f895949dd160ace/5eaf87f1cd1146b8067fb205_clouds-row-3.svg");
+  height: 365px;
+
+  animation: clouds-translation 100s;
+  -webkit-animation: clouds-translation 100s;
+}
+
+.clouds-medium{
+  bottom: 0px;
+  background-image: url("https://assets-global.website-files.com/5e55b63d9f895949dd160ace/5eafa24f6c54ed1d24a2050f_clouds-row-2.svg");
+  height: 551px;
+
+  animation: clouds-translation 100s;
+  -webkit-animation: clouds-translation 70s;
+}
+
+.clouds-large{
+  bottom: 0px;
+  z-index: 1;
+  background-image: url("https://assets-global.website-files.com/5e55b63d9f895949dd160ace/5eaf87f000e6c6efb6f554d2_clouds-row-1.svg");
+  height: 238.53px;
+
+  animation: clouds-translation 40s;
+  -webkit-animation: clouds-translation 40s;
+}
+
+.lp-clouds {
+	position: absolute;
+	left: 0%;
+	top: auto;
+	right: 0%;
+	display: block;
+  width: 5760px;
+  min-width: 200%;
+	background-position: 0px 0px;
+	background-size: auto 100%;
+  background-repeat: repeat-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes clouds-translation{
+  from{
+    transform: translate3d(0px, 0px, 0px)
+  }
+
+  to{
+    transform: translate3d(-2880px, 0px, 0px)
+  }
 }
 
 .bloc-2{
   background: #ff9667;
   height: 100vh;
-  border-top: 2px solid white;
 }
